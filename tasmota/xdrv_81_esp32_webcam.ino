@@ -768,7 +768,7 @@ void HandleWebcamMjpegTask(void) {
     AddLog(LOG_LEVEL_DEBUG, PSTR("CAM: Start stream"));
     Wc.client.print("HTTP/1.1 200 OK\r\n"
       "Content-Type: multipart/x-mixed-replace;boundary=" BOUNDARY "\r\n"
-      "\r\n");
+      "\r\n" "\r\n--" BOUNDARY "\r\n");
     Wc.stream_active = 2;
   }
   if (2 == Wc.stream_active) {
